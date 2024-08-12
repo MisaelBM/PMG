@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PMG - Pedagogical Math Game</title>
+    <link rel="stylesheet" href="stylePrincipal.css">
+    <script src="https://kit.fontawesome.com/65bfbf4940.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="alert-home-content" id="alertHome">
+        <div class="alert-home">
+            <div class="alert-home-text">
+                Este jogo contém efeitos sonoros e músicas
+            </div>
+            <button class="alert-home-button" id="alertHomeBtn">OK</button>
+        </div>
+    </div>
+    <div class="div-transition" id="divTransition"></div>
+    <main class="main-home" id="mainHome">
+        <header class="header-home">
+            <div class="profile-icon-content">
+                <div class="profile-icon">
+                    <i class="fa-solid fa-user-gear"></i>
+                </div>
+                <div class="profile-text">
+                    PERFIL
+                </div>
+            </div>
+        </header>
+        <div class="title-home-content" id="profileBtn">
+            <h1 class="title-home"><i>PMG</i></h1>
+            <h2 class="subtitle-home">Pedagogical Math Game</h2>
+            <hr>
+        </div>
+        <div class="buttons-content">
+            <button class="buttons-home" id="playBtn"><i class="fa-solid fa-play play-icon"></i> Iniciar partida</button>
+            <button class="buttons-home" id="RankBtn"><i class="fa-solid fa-ranking-star rank-icon"></i> Ranks</button>
+            <button class="buttons-home" id="conquestBtn"><i class="fa-solid fa-medal medal-icon"></i> Conquistas</button>
+            <button class="buttons-home" id="booksBtn"><i class="fa-solid fa-book-bookmark book-icon"></i> Matérias</button>
+        </div>
+        <div class="conquest-alert-content" id="conquestAlert">
+            <div class="conquest-alert">
+                <div class="title-conquest-content">
+                    <div class="conquest-icon"><i class="fa-solid fa-star"></i></div>
+                    <span class="title-conquest-text">Conquista desbloqueada!</span>
+                </div>
+                <div class="description-conquest-content">
+                    <span class="description-conquest">Primeira vez no jogo.</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="scriptPrincipal.js"></script>
+</body>
+</html>
