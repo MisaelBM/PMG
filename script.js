@@ -13,11 +13,11 @@ function StartGame() {
             </div>
     </div>`;
     document.querySelectorAll(".multiple-choice-buttons").forEach(e => {
-        e.addEventListener('click', function() {ConfirmRes(e)});
+        e.addEventListener('click', ConfirmRes);
     });
     function ConfirmRes(event) {
-        document.querySelectorAll(".multiple-choice-buttons").forEach(el => {
-            el.removeEventListener('click', function() {ConfirmRes(e)});
+        document.querySelectorAll(".multiple-choice-buttons").forEach(e => {
+            e.removeEventListener('click', ConfirmRes);
         });
         return console.log(parseInt(event.getAttribute("data-buttonData")) == parametersQuest[4] ? true : false);
     };
