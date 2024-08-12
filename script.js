@@ -19,7 +19,7 @@ function StartGame() {
         document.querySelectorAll(".multiple-choice-buttons").forEach(e => {
             e.removeEventListener('click', ConfirmRes);
         });
-        return console.log(parseInt(event.getAttribute("data-buttonData")) == parametersQuest[4] ? true : false);
+        return console.log(parseInt(event.getAttribute("data-buttonData")) == parametersQuest[4] ? true : false, event);
     };
 };
 function EquationQuest() {
