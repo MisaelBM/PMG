@@ -12,7 +12,9 @@ document.getElementById("alertHomeBtn").addEventListener('click', () => {
         }
     , 3000);
 });
-document.getElementById("playBtn").addEventListener('click', () => {});
+document.getElementById("playBtn").addEventListener('click', () => {
+    open("https://misaelbm.github.io/PMG/indexGame.html");
+});
 function ConquestAlert() {
     document.getElementById("conquestAlert").style.display = "flex";
     setTimeout(

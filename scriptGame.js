@@ -13,14 +13,15 @@ function StartGame() {
             </div>
     </div>`;
     document.querySelectorAll(".multiple-choice-buttons").forEach(e => {
-        e.addEventListener('click', ConfirmRes);
-    });
-    function ConfirmRes(event) {
-        document.querySelectorAll(".multiple-choice-buttons").forEach(e => {
-            e.removeEventListener('click', ConfirmRes);
+        e.addEventListener('click', () => {
+            ConfirmRes(e, parametersQuest[4])
+            NextQuest();
         });
-        return console.log(parseInt(event.getAttribute("data-buttonData")) == parametersQuest[4] ? true : false, event);
-    };
+    });
+};
+function ConfirmRes(event, realRes) {
+    document.getElementById("spanQuest").innerHTML = "";
+    return console.log(parseInt(event.getAttribute("data-buttonData")) == realRes ? true : false);
 };
 function EquationQuest() {
     const resEquation = parseInt(Math.random() * (20 - 1) + 1);
@@ -46,5 +47,24 @@ function EquationQuest() {
         [possibleRes[i], possibleRes[j]] = [possibleRes[j], possibleRes[i]];
     };
     return [`${typeOperation ? (resEquation - secondElementEquation) / XOfEquation : (resEquation + secondElementEquation) / XOfEquation}X ${typeOperation ? "+" : "-"} ${secondElementEquation} = ${resEquation}`, possibleRes[0], possibleRes[1], possibleRes[2], XOfEquation];
+};
+function NextQuest() {
+    let parametersQuest = EquationQuest();
+    document.getElementById("spanQuest").innerHTML = `<div class="quiz-multiple-choice" id="multipleChoice">
+            <div class="multiple-choice-visor-content">
+                <span class="multiple-choice-visor" id="multipleChoiceVisor">${parametersQuest[0]}</span>
+            </div>
+            <div class="multiple-choice-buttons-content">
+                <button class="multiple-choice-buttons" data-buttonData="${parametersQuest[1]}">${parametersQuest[1]}</button>
+                <button class="multiple-choice-buttons" data-buttonData="${parametersQuest[2]}">${parametersQuest[2]}</button>
+                <button class="multiple-choice-buttons" data-buttonData="${parametersQuest[3]}">${parametersQuest[3]}</button>
+            </div>
+    </div>`;
+    document.querySelectorAll(".multiple-choice-buttons").forEach(e => {
+        e.addEventListener('click', () => {
+            ConfirmRes(e, parametersQuest[4])
+            NextQuest();
+        });
+    });
 };
 StartGame();
